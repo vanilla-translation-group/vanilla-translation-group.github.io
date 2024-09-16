@@ -19,6 +19,16 @@ const universal_stylesheet = `
 }
 
 @media (max-width: 992px) { 
+    .work_card .card-body .container .row div {
+        display:block;
+        width:100%;
+        margin-bottom:40px;
+    }
+
+    .work_card .card-body .container .row div img {
+        display: block;
+        margin: auto
+    }
 }
 
 @media (max-width: 520px) { 
@@ -54,6 +64,10 @@ const universal_stylesheet = `
     height: 200px;
     width: 100%;
     position: relative;
+}
+
+.work_card .card-body {
+    padding-bottom: 0;
 }
 
 .startup_bg2 {
@@ -243,7 +257,7 @@ function get_work_card(work){
                     <img src="../images/${work.image}" class="work_card_img" />
                 </div>
                 <div class="col-10">
-                    <h2>${work.title}</h2>
+                    <h5>${work.title}</h5>
                     ${typeof(work.subtitle)!=="undefined"?`<h6 style="color:grey;">${work.subtitle}</h6>`:``}
                     
 
