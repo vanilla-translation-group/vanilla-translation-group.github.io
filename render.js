@@ -109,6 +109,8 @@ a:hover {
 
 .work_card_img {
     max-width: 100%; max-height: 150px;
+    display: block;
+    margin: auto;
 }
 
 .see_detail_btn {
