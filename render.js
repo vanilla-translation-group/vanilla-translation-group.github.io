@@ -12,6 +12,10 @@ const universal_stylesheet = `
     .nav-item:hover {
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     }
+
+    #navbar_content {
+        right:20px;position:absolute
+    }
 }
 
 @media (max-width: 992px) { 
@@ -115,7 +119,7 @@ const navbar_template = `
                 <span class="navbar-toggler-icon"></span>
         </button>
 
-            <div class="collapse navbar-collapse" id="navbar_content" style="right:20px;position:absolute">
+            <div class="collapse navbar-collapse" id="navbar_content">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link${current_page==="sub"?" active":""}" href="../sub/"><i class="bi bi-film"></i> 作品集 ·
