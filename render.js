@@ -101,7 +101,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .see_detail_btn_content {
     background-color: rgb(244, 244, 244);
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     border-radius: 12px;
     max-height: 0;
     transition: max-height 0.3s ease-out;
@@ -280,7 +281,7 @@ function render_detail(){
         element.addEventListener("click", function(){
             workMapping[element.id].currentStatus = !workMapping[element.id].currentStatus;
             if(workMapping[element.id].currentStatus){
-                document.getElementById(element.id+"_content").innerHTML = workMapping[element.id]["html"];
+                document.getElementById(element.id+"_content").innerHTML = "<br />"+workMapping[element.id]["html"]+"<br />";
                 document.getElementById(element.id+"_content").style.display = "block";
                 document.getElementById(element.id+"_content").style.maxHeight = document.getElementById(element.id+"_content").scrollHeight + 20 + "px";
                 element.innerHTML = "收起详情 <i class='bi bi-caret-up-fill'></i>";
