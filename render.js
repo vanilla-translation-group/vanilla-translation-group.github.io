@@ -285,9 +285,12 @@ function render_detail(){
                 document.getElementById(element.id+"_content").style.maxHeight = document.getElementById(element.id+"_content").scrollHeight + 20 + "px";
                 element.innerHTML = "收起详情 <i class='bi bi-caret-up-fill'></i>";
             } else {
-                document.getElementById(element.id+"_content").style.display = "none";
                 element.innerHTML = "查看详情 <i class='bi bi-caret-down'></i>";
-                document.getElementById(element.id+"_content").style.maxHeight = "0";
+                document.getElementById(element.id+"_content").style.maxHeight = 0;
+                setTimeout(() => {
+                    document.getElementById(element.id+"_content").style.display = "none";
+                }, 300);
+                
             }
             
         });
