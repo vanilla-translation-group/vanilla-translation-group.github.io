@@ -132,6 +132,7 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 0;
     transition: max-height 0.3s ease-out;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 `;
 
