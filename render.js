@@ -22,12 +22,12 @@ const universal_stylesheet = `
     .work_card .card-body .container .row div {
         display:block;
         width:100%;
-        margin-bottom:40px;
     }
 
     .work_card .card-body .container .row div img {
         display: block;
-        margin: auto
+        margin: auto;
+        margin-bottom:40px;
     }
 }
 
