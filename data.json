@@ -1,0 +1,53 @@
+{
+    "sub": [
+        {
+            "title": "大室家 dear friends",
+            "list": [
+                ["翻译状态", "进行中"],
+                ["翻译进度", "时轴校对"]
+            ],
+            "image": "dearfriends.jpg",
+            "detail": {
+                "html": "<p>关于翻译进度：我们当前正在进行《大室家 dear friends》的时轴校对工作。请期待我们的字幕作品！</p><p>作品介绍：<a href='https://bangumi.tv/subject/448657' target='_blank'>Bangumi 链接</a></p>"
+            }
+        }
+    ],
+    "chs": [
+        {
+            "title": "抬头看看吧，看那天上的繁星 FINE DAYS",
+            "subtitle": "見上げてごらん、夜空の星を FINE DAYS",
+            "list": [
+                ["翻译状态", "进行中"],
+                ["翻译进度", "杨南线 5%"]
+            ],
+            "image": "yozora_fd.jpg",
+            "detail": {
+                "html": "<p>我们当前正在进行杨南线的翻译工作，敬请期待！</p><p>作品介绍：<a href='https://bangumi.tv/subject/167726' target='_blank'>Bangumi 链接</a>、<a href='https://vndb.org/v18907' target='_blank'>vndb</a></p>"
+            }
+        },
+        {
+            "title": "在这苍穹展翅 Gift Edition Ageha",
+            "subtitle": "この大空に、翼をひろげて GIFT EDITION あげはVer",
+            "list": [
+                ["翻译状态", "已完成"],
+                ["翻译进度", "100%"]
+            ],
+            "image": "oozora_gift_edition_ageha.jpg",
+            "detail": {
+                "html": "<p>我们已于 2024.8.30 完成了本作品的翻译工作！🎉🎉</p><p><a type='button' class='btn btn-outline-danger' href='https://github.com/vanilla-translation-group/oozora_gift_edition_chs/releases/download/v1.0/Ageha_patch_installer.exe' target='_blank'><i class='bi bi-download'></i> 获取补丁</a> <a href='https://github.com/vanilla-translation-group/oozora_gift_edition_chs/' target='_blank' type='button' class='btn btn-outline-dark'><i class='bi bi-github'></i> GitHub 页面</a></p>"
+            }
+        },
+        {
+            "title": "在这苍穹展翅 Gift Edition Kotori",
+            "subtitle": "この大空に、翼をひろげて GIFT EDITION 小鳥Ver",
+            "list": [
+                ["翻译状态", "已完成"],
+                ["翻译进度", "100%"]
+            ],
+            "image": "oozora_gift_edition_kotori.jpg",
+            "detail": {
+                "html": "<p>我们已于 2024.8.30 完成了本作品的翻译工作！🎉🎉</p><p><a type='button' class='btn btn-outline-danger' href='https://github.com/vanilla-translation-group/oozora_gift_edition_chs/releases/download/v1.0/Kotori_patch_installer.exe' target='_blank'><i class='bi bi-download'></i> 获取补丁</a> <a href='https://github.com/vanilla-translation-group/oozora_gift_edition_chs/' target='_blank' type='button' class='btn btn-outline-dark'><i class='bi bi-github'></i> GitHub 页面</a></p>"
+            }
+        }
+    ]
+}
