@@ -21,6 +21,17 @@ const universal_stylesheet = `
 @media (max-width: 992px) { 
 }
 
+@media (max-width: 520px) { 
+    a.navbar-brand {
+        width: 60vw;
+        display:block;
+    }
+
+    a.navbar-brand span {
+        display:block;
+    }
+}
+
 
 .nav-item .nav-link {
     color: #9a9a9a;
