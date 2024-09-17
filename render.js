@@ -256,7 +256,7 @@ let workMapping = new Object();
 function get_work_card(work){
     let work_card_template = `
     <div style="margin-top: 20px;"></div>
-<div class="card work_card">
+<div class="card work_card" id="${work.id}">
     <div class="card-body">
         <div class="container">
             <div class="row">
@@ -270,7 +270,7 @@ function get_work_card(work){
 
 `;
     for(let i = 0; i < work.list.length; i++){
-        if(work.list[i][0] === "翻译状态"){
+        if(work.list[i][0] === "状态"){
             work_card_template += `
                     <li>${work.list[i][0]}：<span style="color:${work.list[i][1]==="已完成"?"deepskyblue":(work.list[i][1]==="已终止"?"red":(work.list[i][1]==="进行中"?"orange":"black"))}">${work.list[i][1]==="已完成"?`<i class="bi bi-check2"></i>`:(work.list[i][1]==="已终止"?`<i class="bi bi-ban"></i>`:(work.list[i][1]==="进行中"?`<i class="bi bi-hourglass-split"></i>`:""))} ${work.list[i][1]}</span></li>
 `;
