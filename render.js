@@ -151,17 +151,16 @@ const navbar_template = `
             <div class="collapse navbar-collapse" id="navbar_content">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link${current_page==="sub"?" active":""}" href="../sub/"><i class="bi bi-film"></i> 作品集 ·
-                            字幕</a>
+                        <a class="nav-link${current_page==="about"?" active":""}" href="../about/"><i class="bi bi-info-square"></i> 关于我们</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link${current_page==="chs"?" active":""}" href="../chs/"><i class="bi bi-file-earmark-text"></i> 作品集 · 汉化</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link${current_page==="blog"?" active":""}" href="../blog/"><i class="bi bi-book"></i> 博客 & 研究</a>
+                        <a class="nav-link${current_page==="sub"?" active":""}" href="../sub/"><i class="bi bi-film"></i> 作品集 · 字幕</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link${current_page==="about"?" active":""}" href="../about/"><i class="bi bi-info-square"></i> 关于我们</a>
+                        <a class="nav-link${current_page==="blog"?" active":""}" href="../blog/"><i class="bi bi-book"></i> 博客 & 研究</a>
                     </li>
                 </ul>
             </div>
@@ -230,8 +229,13 @@ const about_page_template = `
     </div>
 </div>
 <div class="container" id="page_content">
-    <h2>相关链接</h2>
-    <p><a href="https://github.com/vanilla-translation-group" target="_blank">GitHub</a></p>
+    <h2>成员列表</h2>
+    <ul>
+        <li>Misaka13514 / 欠陥電気（翻译、测试、修图）</li>
+        <li>baiyuanneko / 柏园猫（网页开发）</li>
+        <li>scientificworld（翻译、程序）</li>
+        <li>杏乃夏未（翻译、特效字幕）</li>
+    </ul>
     <div style="margin-top: 80px;"></div>
     <hr />
     ${bottom_template}
