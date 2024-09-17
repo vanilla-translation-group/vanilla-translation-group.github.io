@@ -31,6 +31,17 @@ const universal_stylesheet = `
     }
 }
 
+@media (min-width: 992px) and (max-width: 1076px) {
+    a.navbar-brand {
+        width: 60vw;
+        display:block;
+    }
+
+    a.navbar-brand span {
+        display:block;
+    }
+}
+
 @media (max-width: 520px) { 
     a.navbar-brand {
         width: 60vw;
