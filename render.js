@@ -267,7 +267,7 @@ let workMapping = new Object();
 function get_work_card(work){
     let work_card_template = `
     <div style="margin-top: 20px;"></div>
-<div class="card work_card" id="${work.id}">
+<div class="card work_card" ${typeof work.id !== "undefined" ? `id="${work.id}"` : ``}>
     <div class="card-body">
         <div class="container">
             <div class="row">
