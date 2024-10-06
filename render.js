@@ -247,6 +247,11 @@ const about_page_template = `
         <li>scientificworld（翻译、程序）</li>
         <li>杏乃夏未（翻译、特效字幕）</li>
     </ul>
+    <div style="margin-top: 40px;"></div>
+    <h2>各平台发布帐号</h2>
+    <ul>
+        <li>Mikan Project：scientificworld、Misaka13514</li>
+    </ul>
     <div style="margin-top: 80px;"></div>
     <hr />
     ${bottom_template}
