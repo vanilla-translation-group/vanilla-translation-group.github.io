@@ -250,7 +250,7 @@ const about_page_template = `
     <div style="margin-top: 40px;"></div>
     <h2>各平台发布帐号</h2>
     <ul>
-        <li>Mikan Project：scientificworld、Misaka13514</li>
+        <li><a href="https://mikanani.me/Home/PublishGroup/982" target="_blank">Mikan Project</a></li>
     </ul>
     <div style="margin-top: 80px;"></div>
     <hr />
