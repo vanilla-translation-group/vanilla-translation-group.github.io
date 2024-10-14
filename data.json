@@ -17,12 +17,12 @@
             "id": "oomuro-ke_dear_friends",
             "title": "大室家 dear friends",
             "list": [
-                ["状态", "进行中"],
-                ["进度", "翻译"]
+                ["状态", "已终止"],
+                ["进度", "听写、时轴完成，翻译部分完成"]
             ],
             "image": "dearfriends.jpg",
             "detail": {
-                "html": "<p>关于翻译进度：我们当前已经完成了《大室家 dear friends》的听写和时轴工作，正在进行翻译和制作特效。请期待我们的字幕作品！</p><p>作品介绍：<a href='https://bangumi.tv/subject/448657' target='_blank'>Bangumi</a>、<a href='https://anidb.net/anime/18146' target='_blank'>AniDB</a></p>"
+                "html": "<p>我们此前已经完成了《大室家 dear friends》的听写和时轴工作。但由于人手不足，且已有其他字幕组完成了本作的字幕，出于以上原因我们决定终止本作的字幕制作，非常抱歉。</p><p>部分完成的字幕可能会在稍后放出下载。</p><p>作品介绍：<a href='https://bangumi.tv/subject/448657' target='_blank'>Bangumi</a>、<a href='https://anidb.net/anime/18146' target='_blank'>AniDB</a></p>"
             }
         }
     ],
