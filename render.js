@@ -324,9 +324,21 @@ function get_work_card(work){
     return work_card_template;
 }
 
+function throttle(func, delay) {
+    let lastCall = 0;
+    return function(...args) {
+        const now = new Date().getTime();
+        if (now - lastCall < delay) {
+            return;
+        }
+        lastCall = now;
+        return func(...args);
+    };
+}
+
 function render_detail(){
     document.querySelectorAll(".see_detail_btn a").forEach(element => {
-        element.addEventListener("click", function(){
+        element.addEventListener("click", throttle(function(){
             workMapping[element.id].currentStatus = !workMapping[element.id].currentStatus;
             if(workMapping[element.id].currentStatus){
                 document.getElementById(element.id+"_content").innerHTML = "<br />"+workMapping[element.id]["html"]+"<br />";
@@ -339,10 +351,8 @@ function render_detail(){
                 setTimeout(() => {
                     document.getElementById(element.id+"_content").style.display = "none";
                 }, 300);
-                
             }
-            
-        });
+        }, 300));
     });
 }
 
