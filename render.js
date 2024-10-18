@@ -240,12 +240,21 @@ const about_page_template = `
     </div>
 </div>
 <div class="container" id="page_content">
+    <div style="text-indent: 25px each-line;">
+        我们是由一群计算机和 ACGN 爱好者组成的一个兴趣使然的翻译同好会。gal、动画、漫画之类都有在翻译，也算是涉猎广泛了。嘛，总之是个比较松散随性的组织，组里也没有什么细化的分工。<br>
+        一个坑都是这么个流程：组员冒出一个点子（诶我觉得这作还行也没人做）-&gt; 总之自己先开干（之后再拉其他人下水）-&gt; 干完了（发布）/ 各种原因干不完（弃坑）<br>
+        关于这个名字的来由，是因为组员们都很喜欢猫娘，尤以 NEKOPARA 的香子兰为最。不过我们也有别的马甲，比如<span style="background: black; color: black;">+JctopiXLd7NsSVMWfsQ-</span>什么的。<br>
+        由于挖坑似乎一不小心挖多了所以现在正处于急需人手状态，最缺的还是翻译（含校润）。要求是翻译出来的文本能让人读懂且基本符合原意（特殊情况除外）就行，即“达”和“信”，至于“雅”可以暂不考虑。<br>
+        如果你看到这里还有点点兴趣的话<del>（应该不会有吧）</del>，可以在<a href="">这里</a>填写申请表加入我们，<del>一起愉快的摸鱼划水</del>。
+    </div>
+    <div style="margin-top: 40px;"></div>
     <h2>成员列表</h2>
     <ul>
         <li>Misaka13514 / 欠陥電気（翻译、测试、修图）</li>
         <li>baiyuanneko / 柏园猫（网页开发）</li>
         <li>scientificworld（翻译、程序）</li>
         <li>杏乃夏未（翻译、特效字幕）</li>
+        <li>Lockinwize Lolite（翻译协力）</li>
     </ul>
     <div style="margin-top: 40px;"></div>
     <h2>各平台发布帐号</h2>
