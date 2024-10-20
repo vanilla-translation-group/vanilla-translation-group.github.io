@@ -254,12 +254,12 @@ const about_page_template = `
         <li>baiyuanneko / 柏园猫（网页开发）</li>
         <li>scientificworld（翻译、程序）</li>
         <li>杏乃夏未（翻译、特效字幕）</li>
-        <li>Lockinwize Lolite（翻译协力）</li>
+        <li>Lockinwize Lolite / 洛仙璃（翻译协力）</li>
     </ul>
     <div style="margin-top: 40px;"></div>
     <h2>各平台发布帐号</h2>
     <ul>
-        <li><a href="https://mikanani.me/Home/PublishGroup/982" target="_blank">Mikan Project</a></li>
+        <li><a href="https://mikanani.me/Home/PublishGroup/982" target="_blank">Mikan Project / 蜜柑计划</a></li>
     </ul>
     <div style="margin-top: 80px;"></div>
     <hr />
