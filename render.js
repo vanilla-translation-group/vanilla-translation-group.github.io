@@ -170,6 +170,37 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1; /* 初始完全可见 */
     transition: opacity 0.5s ease; /* 过渡效果 */
 }
+
+/* 暗色模式 */
+html[data-bs-theme="dark"] {
+    --navbar-bg-color: rgb(34, 34, 34); /* 全局的背景色变量 */
+    --nav-item-bg-color: rgb(48, 48, 48); /* 导航项背景色 */
+    --nav-item-hover-shadow: rgba(255, 255, 255, 0.1); /* 导航项悬停时的阴影 */
+    --startup-bg-color: rgba(34, 34, 34, 0.7); /* 启动时的暗色半透明遮罩 */
+    --see-detail-bg-color: rgb(48, 48, 48); /* 详情按钮的背景色 */
+}
+
+html[data-bs-theme="dark"] #navbar {
+    background-color: var(--navbar-bg-color);
+}
+
+@media (min-width: 992px) {
+    html[data-bs-theme="dark"] .nav-item {
+        background-color: var(--nav-item-bg-color);
+    }
+
+    html[data-bs-theme="dark"] .nav-item:hover {
+        box-shadow: 0 0 30px var(--nav-item-hover-shadow);
+    }
+}
+
+html[data-bs-theme="dark"] .startup_bg_content {
+    background-color: var(--startup-bg-color);
+}
+
+html[data-bs-theme="dark"] .see_detail_btn_content {
+    background-color: var(--see-detail-bg-color);
+}
 `;
 
 const navbar_template = `
@@ -182,22 +213,51 @@ const navbar_template = `
                 <span class="navbar-toggler-icon"></span>
         </button>
 
-            <div class="collapse navbar-collapse" id="navbar_content">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link${current_page==="about"?" active":""}" href="../about/"><i class="bi bi-info-square"></i> 关于我们</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link${current_page==="chs"?" active":""}" href="../chs/"><i class="bi bi-file-earmark-text"></i> 作品集 · 汉化</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link${current_page==="sub"?" active":""}" href="../sub/"><i class="bi bi-film"></i> 作品集 · 字幕</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link${current_page==="blog"?" active":""}" href="../blog/"><i class="bi bi-book"></i> 博客 & 研究</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="collapse navbar-collapse" id="navbar_content">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link${current_page==="about"?" active":""}" href="../about/"><i class="bi bi-info-square"></i> 关于我们</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link${current_page==="chs"?" active":""}" href="../chs/"><i class="bi bi-file-earmark-text"></i> 作品集 · 汉化</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link${current_page==="sub"?" active":""}" href="../sub/"><i class="bi bi-film"></i> 作品集 · 字幕</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link${current_page==="blog"?" active":""}" href="../blog/"><i class="bi bi-book"></i> 博客 & 研究</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
+                    id="bd-color-mode" data-bs-toggle="dropdown" aria-expanded="false"
+                    data-bs-display="static">
+                        <i id="current-theme-icon" class="me-2"></i> 切换主题
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="bd-color-mode" style="--bs-dropdown-min-width: 6rem;"
+                    data-bs-popper="static">
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center"
+                            data-bs-theme-value="light">
+                                <i class="bi bi-sun-fill me-2"></i> 浅色
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center"
+                            data-bs-theme-value="dark">
+                                <i class="bi bi-moon-fill me-2"></i> 深色
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center"
+                            data-bs-theme-value="auto">
+                                <i class="bi bi-circle-half me-2"></i> 自动
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 `;
@@ -450,3 +510,58 @@ function render(){
 }
 
 render();
+
+function updateTheme() {
+    const localTheme = localStorage.getItem("theme");
+    let theme = "auto";  // Default to 'auto'
+    
+    if (localTheme && ["light", "dark"].includes(localTheme)) {
+        theme = localTheme;
+    }
+
+    updateCurrentThemeIcon(theme);
+    highlightSelectedTheme(theme);
+
+    if (theme === "auto") {
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+        theme = prefersDarkScheme.matches ? "dark" : "light";
+    }
+    document.querySelector("html").setAttribute("data-bs-theme", theme);
+}
+
+function updateCurrentThemeIcon(currentTheme) {
+    const themeIconMap = {
+        light: "bi-sun-fill",
+        dark: "bi-moon-fill",
+        auto: "bi-circle-half"
+    };
+
+    const currentIcon = document.getElementById("current-theme-icon");
+    currentIcon.className = `me-2 ${themeIconMap[currentTheme]}`;  // Update current theme icon
+}
+
+function highlightSelectedTheme(currentTheme) {
+    // Clear previous highlights
+    document.querySelectorAll(".dropdown-item").forEach(item => {
+        item.classList.remove("active");  // Use 'active' class to highlight
+    });
+
+    // Highlight the selected theme
+    const selectedThemeButton = document.querySelector(`[data-bs-theme-value="${currentTheme}"]`);
+    if (selectedThemeButton) {
+        selectedThemeButton.classList.add("active");
+    }
+}
+
+// Add event listener for theme change
+document.querySelectorAll("[data-bs-theme-value]").forEach(button => {
+    button.addEventListener("click", function () {
+        const selectedTheme = this.getAttribute("data-bs-theme-value");
+        localStorage.setItem("theme", selectedTheme);
+        document.querySelector("html").setAttribute("data-bs-theme", selectedTheme);
+        updateCurrentThemeIcon(selectedTheme);
+        highlightSelectedTheme(selectedTheme);
+    });
+});
+
+updateTheme();
