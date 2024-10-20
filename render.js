@@ -1,5 +1,5 @@
 const universal_stylesheet = `
-@media (min-width: 992px) { 
+@media (min-width: 1085px) { 
     .nav-item {
         background-color: white;
         margin-left: 14px;
@@ -18,20 +18,19 @@ const universal_stylesheet = `
     }
 }
 
-@media (max-width: 992px) { 
-    .work_card .card-body .container .row div {
-        display:block;
-        width:100%;
+@media (max-width: 1085px) { 
+    .work_card .card-body .container .row div.col-2 {
+        display: flex;
+        width: 100%;
+        margin-bottom: var(--bs-card-spacer-y);
     }
 
-    .work_card .card-body .container .row div img {
-        display: block;
+    .work_image_container {
         margin: auto;
-        margin-bottom:40px;
     }
 }
 
-@media (min-width: 992px) and (max-width: 1076px) {
+@media (min-width: 1085px) and (max-width: 1200px) {
     a.navbar-brand {
         width: 60vw;
         display:block;
@@ -104,6 +103,7 @@ const universal_stylesheet = `
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 3em;
 }
 
 a {
@@ -119,7 +119,8 @@ a:hover {
 }
 
 .work_card_img {
-    max-width: 100%; max-height: 150px;
+    max-width: 100%;
+    max-height: 150px;
     display: block;
     margin: auto;
 }
@@ -139,13 +140,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .see_detail_btn_content {
     background-color: rgb(244, 244, 244);
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
     border-radius: 12px;
     max-height: 0;
     transition: max-height 0.3s ease-out;
     overflow: hidden;
     margin-bottom: 20px;
+}
+
+.see_detail_btn_content p {
+    margin: unset;
+}
+
+.see_detail_btn_content p:not(:first-child) {
+    margin-top: 1em;
 }
 
 /* NSFW 图片遮罩样式 */
@@ -157,13 +165,7 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     background: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
-    font-size: 18px;
-    text-align: center;
-    padding: 10px;
     z-index: 1; /* 确保遮罩层位于图片上方 */
     backdrop-filter: blur(5px); /* 添加高斯模糊效果 */
     -webkit-backdrop-filter: blur(5px); /* 兼容 Safari 浏览器 */
@@ -184,7 +186,7 @@ html[data-bs-theme="dark"] #navbar {
     background-color: var(--navbar-bg-color);
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1085px) {
     html[data-bs-theme="dark"] .nav-item {
         background-color: var(--nav-item-bg-color);
     }
@@ -204,7 +206,7 @@ html[data-bs-theme="dark"] .see_detail_btn_content {
 `;
 
 const navbar_template = `
-<nav class="navbar navbar-expand-lg" id="navbar">
+<nav class="navbar navbar-expand-lg sticky-top" id="navbar">
     <div class="container-fluid">
         <a class="navbar-brand" href="../index.html">Vanilla Translation Group <span
                 style="color: gray; font-size: medium;">香子兰翻译同好会</span></a>
@@ -263,21 +265,18 @@ const navbar_template = `
 `;
 
 const bottom_template = `
-<p><i class="bi bi-github"></i> <a href="https://github.com/vanilla-translation-group" target="_blank">访问我们的 GitHub 页面</a></p>
+<div style="margin-top: 80px;"></div><hr /><p><i class="bi bi-github"></i> <a href="https://github.com/vanilla-translation-group" target="_blank">访问我们的 GitHub 页面</a></p>
 `;
 
 const sub_page_template = `
 <div class="startup_bg">
     <div class="startup_bg_content">
-        <br /><br />
         <h1>作品集 · 字幕</h1>
         <p>我们翻译的动画、电影等作品的字幕文件。</p>
     </div>
 </div>
 <div class="container" id="page_content">
-    <div id="work_cards"></div>
-    <div style="margin-top: 80px;"></div>
-    <hr />
+    <div id="work_cards" class="d-grid gap-3"></div>
     ${bottom_template}
 </div>
 `;
@@ -285,15 +284,12 @@ const sub_page_template = `
 const chs_page_template = `
 <div class="startup_bg2">
     <div class="startup_bg_content">
-        <br /><br />
         <h1>作品集 · 汉化</h1>
         <p>我们翻译的视觉小说等作品的汉化补丁文件。</p>
     </div>
 </div>
 <div class="container" id="page_content">
-    <div id="work_cards"></div>
-    <div style="margin-top: 80px;"></div>
-    <hr />
+    <div id="work_cards" class="d-grid gap-3"></div>
     ${bottom_template}
 </div>
 `;
@@ -301,15 +297,12 @@ const chs_page_template = `
 const blog_page_template = `
 <div class="startup_bg2">
     <div class="startup_bg_content">
-        <br /><br />
         <h1>博客 & 研究</h1>
         <p>汉化作品发布博客、汉化过程中的一些技术成果等。</p>
     </div>
 </div>
 <div class="container" id="page_content">
     （此页面正在建设中，敬请期待！）
-    <div style="margin-top: 80px;"></div>
-    <hr />
     ${bottom_template}
 </div>
 `;
@@ -317,18 +310,17 @@ const blog_page_template = `
 const about_page_template = `
 <div class="startup_bg2">
     <div class="startup_bg_content">
-        <br /><br />
         <h1>关于我们</h1>
         <p>关于「香子兰翻译同好会」的一切。</p>
     </div>
 </div>
 <div class="container" id="page_content">
     <div style="text-indent: 25px each-line;">
-        我们是由一群计算机和 ACGN 爱好者组成的一个兴趣使然的翻译同好会。gal、动画、漫画之类都有在翻译，也算是涉猎广泛了。嘛，总之是个比较松散随性的组织，组里也没有什么细化的分工。<br>
-        一个坑都是这么个流程：组员冒出一个点子（诶我觉得这作还行也没人做）-&gt; 总之自己先开干（之后再拉其他人下水）-&gt; 干完了（发布）/ 各种原因干不完（弃坑）<br>
-        关于这个名字的来由，是因为组员们都很喜欢猫娘，尤以 NEKOPARA 的香子兰为最。不过我们也有别的马甲，比如<span style="background: black; color: black;">+JctopiXLd7NsSVMWfsQ-</span>什么的。<br>
-        由于挖坑似乎一不小心挖多了所以现在正处于急需人手状态，最缺的还是翻译（含校润）。要求是翻译出来的文本能让人读懂且基本符合原意（特殊情况除外）就行，即“达”和“信”，至于“雅”可以暂不考虑。<br>
-        如果你看到这里还有点点兴趣的话<del>（应该不会有吧）</del>，可以在<a href="https://github.com/vanilla-translation-group/vanilla-translation-group.github.io/issues/new?assignees=&labels=&projects=&template=application_form.md&title=%E7%94%B3%E8%AF%B7%E8%A1%A8">这里</a>填写申请表加入我们，<del>一起愉快的摸鱼划水</del>。
+        <p>我们是由一群计算机和 ACGN 爱好者组成的一个兴趣使然的翻译同好会。gal、动画、漫画之类都有在翻译，也算是涉猎广泛了。嘛，总之是个比较松散随性的组织，组里也没有什么细化的分工。<br>
+           关于这个名字的来由，是因为组员们都很喜欢猫娘，尤以 NEKOPARA 的香子兰为最。不过我们也有别的马甲，比如<span style="background: black; color: black;">+JctopiXLd7NsSVMWfsQ-</span>什么的。</p>
+        <p>一个坑都是这么个流程：组员冒出一个点子（诶我觉得这作还行也没人做）-&gt; 总之自己先开干（之后再拉其他人下水）-&gt; 干完了（发布）/ 各种原因干不完（弃坑）</p>
+        <p>由于挖坑似乎一不小心挖多了所以现在正处于急需人手状态，最缺的还是翻译（含校润）。要求是翻译出来的文本能让人读懂且基本符合原意（特殊情况除外）就行，即“达”和“信”，至于“雅”可以暂不考虑。<br>
+        如果你看到这里还有点点兴趣的话<del>（应该不会有吧）</del>，可以在<a href="https://github.com/vanilla-translation-group/vanilla-translation-group.github.io/issues/new?assignees=&labels=&projects=&template=application_form.md&title=%E7%94%B3%E8%AF%B7%E8%A1%A8">这里</a>填写申请表加入我们，<del>一起愉快的摸鱼划水</del>。</p>
     </div>
     <div style="margin-top: 40px;"></div>
     <h2>成员列表</h2>
@@ -344,8 +336,6 @@ const about_page_template = `
     <ul>
         <li><a href="https://mikanani.me/Home/PublishGroup/982" target="_blank">Mikan Project / 蜜柑计划</a></li>
     </ul>
-    <div style="margin-top: 80px;"></div>
-    <hr />
     ${bottom_template}
 </div>
 `;
@@ -363,13 +353,12 @@ let workMapping = new Object();
 
 function get_work_card(work) {
     let work_card_template = `
-    <div style="margin-top: 20px;"></div>
     <div class="card work_card" ${typeof work.id !== "undefined" ? `id="${work.id}"` : ``}>
         <div class="card-body">
             <div class="container">
                 <div class="row">
                     <div class="col-2">
-                        <div class="work_image_container" style="position: relative;">
+                        <div class="work_image_container position-relative d-inline-block">
 `;
 
     // 判断是否为外链
@@ -381,7 +370,7 @@ function get_work_card(work) {
     // 如果是 NSFW 内容，添加遮罩
     if (work.nsfw) {
         work_card_template += `
-                            <div class="nsfw_overlay">
+                            <div class="nsfw_overlay d-flex justify-content-center align-items-center">
                                 <i class="bi bi-eye-fill" style="font-size: 2rem;"></i>
                             </div>
                         `;
@@ -398,7 +387,7 @@ function get_work_card(work) {
     for (let i = 0; i < work.list.length; i++) {
         if (work.list[i][0] === "状态") {
             work_card_template += `
-                        <li>${work.list[i][0]}：<span style="color:${work.list[i][1]==="已完成"?"deepskyblue":(work.list[i][1]==="已终止"?"red":(work.list[i][1]==="进行中"?"orange":"black"))}">${work.list[i][1]==="已完成"?`<i class="bi bi-check2"></i>`:(work.list[i][1]==="已终止"?`<i class="bi bi-ban"></i>`:(work.list[i][1]==="进行中"?`<i class="bi bi-hourglass-split"></i>`:""))} ${work.list[i][1]}</span></li>
+                        <li>${work.list[i][0]}：<span style="color:${work.list[i][1]==="已完成"?"deepskyblue":(work.list[i][1]==="已终止"?"red":(work.list[i][1]==="进行中"?"orange":"var(--bs-body-color)"))}">${work.list[i][1]==="已完成"?`<i class="bi bi-check2"></i>`:(work.list[i][1]==="已终止"?`<i class="bi bi-ban"></i>`:(work.list[i][1]==="进行中"?`<i class="bi bi-hourglass-split"></i>`:""))} ${work.list[i][1]}</span></li>
             `;
         } else {
             work_card_template += `
@@ -413,7 +402,6 @@ function get_work_card(work) {
                     </div>
                 </div>
             </div>
-            <br />
 
             ${typeof(work.detail)=== "undefined"?"<!--":""}
             <hr />
@@ -434,6 +422,13 @@ function get_work_card(work) {
     return work_card_template;
 }
 
+/**
+ * Throttle function to limit the rate at which a function can fire
+ * For example, render_detail() status can be wrongly displayed if the user clicks the button too fast
+ * @param {Function} func function to throttle
+ * @param {number} delay in milliseconds
+ * @returns 
+ */
 function throttle(func, delay) {
     let lastCall = 0;
     return function(...args) {
@@ -451,7 +446,7 @@ function render_detail(){
         element.addEventListener("click", throttle(function(){
             workMapping[element.id].currentStatus = !workMapping[element.id].currentStatus;
             if(workMapping[element.id].currentStatus){
-                document.getElementById(element.id+"_content").innerHTML = "<br />"+workMapping[element.id]["html"]+"<br />";
+                document.getElementById(element.id+"_content").innerHTML = workMapping[element.id]["html"];
                 document.getElementById(element.id+"_content").style.display = "block";
                 document.getElementById(element.id+"_content").style.maxHeight = document.getElementById(element.id+"_content").scrollHeight + 20 + "px";
                 element.innerHTML = "收起详情 <i class='bi bi-caret-up-fill'></i>";
@@ -462,10 +457,14 @@ function render_detail(){
                     document.getElementById(element.id+"_content").style.display = "none";
                 }, 300);
             }
+            updateButtonOutline(getActualTheme());
         }, 300));
     });
 }
 
+/**
+ * Add the event listener to the NSFW overlay to hide it when clicked
+ */
 function render_nsfw_overlay() {
     document.querySelectorAll(".nsfw_overlay").forEach(element => {
         element.addEventListener("click", function() {
@@ -511,25 +510,49 @@ function render(){
 
 render();
 
-function updateTheme() {
+/**
+ * Get the current theme mode from localStorage
+ * @returns {string} The current theme mode, either 'light', 'dark', or 'auto'
+ */
+function getThemeMode() {
     const localTheme = localStorage.getItem("theme");
     let theme = "auto";  // Default to 'auto'
-    
-    if (localTheme && ["light", "dark"].includes(localTheme)) {
+    if (["light", "dark"].includes(localTheme)) {
         theme = localTheme;
     }
-
-    updateCurrentThemeIcon(theme);
-    highlightSelectedTheme(theme);
-
-    if (theme === "auto") {
-        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-        theme = prefersDarkScheme.matches ? "dark" : "light";
-    }
-    document.querySelector("html").setAttribute("data-bs-theme", theme);
+    return theme;
 }
 
-function updateCurrentThemeIcon(currentTheme) {
+/**
+ * Get the actual theme mode based on the current theme mode and system preference
+ * @returns {string} The actual theme mode, either 'light' or 'dark'
+ */
+function getActualTheme() {
+    const theme = getThemeMode();
+    if (theme === "auto") {
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+        return prefersDarkScheme.matches ? "dark" : "light";
+    }
+    return theme;
+}
+
+/**
+ * Update the theme based on the current theme mode
+ */
+function updateTheme() {
+    const theme = getThemeMode();
+    updateCurrentThemeIndicator(theme);
+
+    const actualTheme = getActualTheme();
+    document.querySelector("html").setAttribute("data-bs-theme", actualTheme);
+    updateButtonOutline(actualTheme);
+}
+
+/**
+ * Update the current theme indicator in the dropdown menu and navbar
+ * @param {string} theme The current theme mode, either 'light', 'dark', or 'auto'
+ */
+function updateCurrentThemeIndicator(theme) {
     const themeIconMap = {
         light: "bi-sun-fill",
         dark: "bi-moon-fill",
@@ -537,19 +560,37 @@ function updateCurrentThemeIcon(currentTheme) {
     };
 
     const currentIcon = document.getElementById("current-theme-icon");
-    currentIcon.className = `me-2 ${themeIconMap[currentTheme]}`;  // Update current theme icon
-}
+    currentIcon.className = `me-2 ${themeIconMap[theme]}`;  // Update current theme icon
 
-function highlightSelectedTheme(currentTheme) {
-    // Clear previous highlights
     document.querySelectorAll(".dropdown-item").forEach(item => {
         item.classList.remove("active");  // Use 'active' class to highlight
     });
 
-    // Highlight the selected theme
-    const selectedThemeButton = document.querySelector(`[data-bs-theme-value="${currentTheme}"]`);
+    const selectedThemeButton = document.querySelector(`[data-bs-theme-value="${theme}"]`);
     if (selectedThemeButton) {
         selectedThemeButton.classList.add("active");
+    }
+}
+
+/**
+ * Replace the button outline color based on the theme
+ * https://getbootstrap.com/docs/5.0/components/buttons/#outline-buttons
+ * Some of the button styles use a relatively light foreground color,
+ * and should only be used on specific background in order to have sufficient contrast.
+ * @param {string} theme The actual theme mode, either 'light' or 'dark'
+ */
+function updateButtonOutline(theme) {
+    const buttons = document.querySelectorAll(".btn");
+    if (theme === "dark") {
+        document.querySelectorAll(".btn-outline-dark").forEach(button => {
+            button.classList.remove("btn-outline-dark");
+            button.classList.add("btn-outline-light");
+        });
+    } else if (theme === "light") {
+        document.querySelectorAll(".btn-outline-light").forEach(button => {
+            button.classList.remove("btn-outline-light");
+            button.classList.add("btn-outline-dark");
+        });
     }
 }
 
@@ -558,9 +599,7 @@ document.querySelectorAll("[data-bs-theme-value]").forEach(button => {
     button.addEventListener("click", function () {
         const selectedTheme = this.getAttribute("data-bs-theme-value");
         localStorage.setItem("theme", selectedTheme);
-        document.querySelector("html").setAttribute("data-bs-theme", selectedTheme);
-        updateCurrentThemeIcon(selectedTheme);
-        highlightSelectedTheme(selectedTheme);
+        updateTheme();
     });
 });
 
