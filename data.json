@@ -1,70 +1,70 @@
 {
-    "sub": [
-        {
-            "id": "hamidashi_creative_anime",
-            "title": "常轨脱离Creative",
-	    "subtitle": "ハミダシクリエイティブ",
-            "list": [
-                ["状态", "进行中"],
-                ["进度", "3话"]
-            ],
-            "image": "hamikuri_anime.jpg",
-            "detail": {
-                "html": "<p>作品介绍：<a href='https://bangumi.tv/subject/437532' target='_blank'>Bangumi</a>、<a href='https://anidb.net/anime/18814' target='_blank'>AniDB</a></p><p><a type='button' class='btn btn-outline-danger' href='https://github.com/vanilla-translation-group/subtitles/tree/main/Hamidashi_Creative' target='_blank'><i class='bi bi-download'></i> 获取字幕</a></p>"
-            }
-        },
-        {
-            "id": "oomuro-ke_dear_friends",
-            "title": "大室家 dear friends",
-            "list": [
-                ["状态", "已终止"],
-                ["进度", "听写、时轴完成，翻译部分完成"]
-            ],
-            "image": "dearfriends.jpg",
-            "detail": {
-                "html": "<p>我们此前已经完成了《大室家 dear friends》的听写和时轴工作。但由于人手不足，且已有其他字幕组完成了本作的字幕，出于以上原因我们决定终止本作的字幕制作，非常抱歉。</p><p>该作品推荐字幕组：提灯喵汉化组。</p><p>作品介绍：<a href='https://bangumi.tv/subject/448657' target='_blank'>Bangumi</a>、<a href='https://anidb.net/anime/18146' target='_blank'>AniDB</a></p><p><a type='button' class='btn btn-outline-danger' href='https://github.com/vanilla-translation-group/subtitles/tree/main/Oomuro-ke_Dear_Friends' target='_blank'><i class='bi bi-download'></i> 获取字幕（仅日文）</a></p>"
-            }
-        }
-    ],
-    "chs": [
-        {
-            "id": "miazora_fd",
-            "title": "抬头看看吧，看那天上的繁星 FINE DAYS",
-            "subtitle": "見上げてごらん、夜空の星を FINE DAYS",
-            "list": [
-                ["状态", "进行中"],
-                ["进度", "阳南线 7%"]
-            ],
-            "image": "yozora_fd.jpg",
-            "detail": {
-                "html": "<p>我们当前正在进行阳南线的翻译工作，敬请期待！</p><p>作品介绍：<a href='https://bangumi.tv/subject/167726' target='_blank'>Bangumi</a>、<a href='https://vndb.org/v18907' target='_blank'>VNDB</a></p>"
-            }
-        },
-        {
-            "id": "konosora_ge_ageha",
-            "title": "在这苍穹展翅 Gift Edition Ageha",
-            "subtitle": "この大空に、翼をひろげて GIFT EDITION あげはVer",
-            "list": [
-                ["状态", "已完成"],
-                ["进度", "100%"]
-            ],
-            "image": "oozora_gift_edition_ageha.jpg",
-            "detail": {
-                "html": "<p>我们已于 2024.8.30 完成了本作品的翻译工作！🎉🎉</p><p>作品介绍：<a href='https://bangumi.tv/subject/510506' target='_blank'>Bangumi</a>、<a href='https://vndb.org/v37097' target='_blank'>VNDB</a></p><p>参与人员：</p><ul><li>scientificworld（初翻、程序、修图）</li><li>Misaka13514（校对、润色、测试）</li></ul><p><a type='button' class='btn btn-outline-danger' href='https://github.com/vanilla-translation-group/oozora_gift_edition_chs/releases/download/v1.0/Ageha_patch_installer.exe' target='_blank'><i class='bi bi-download'></i> 获取补丁</a> <a href='https://github.com/vanilla-translation-group/oozora_gift_edition_chs/' target='_blank' type='button' class='btn btn-outline-dark'><i class='bi bi-github'></i> GitHub 页面</a></p>"
-            }
-        },
-        {
-            "id": "konosora_ge_kotori",
-            "title": "在这苍穹展翅 Gift Edition Kotori",
-            "subtitle": "この大空に、翼をひろげて GIFT EDITION 小鳥Ver",
-            "list": [
-                ["状态", "已完成"],
-                ["进度", "100%"]
-            ],
-            "image": "oozora_gift_edition_kotori.jpg",
-            "detail": {
-                "html": "<p>我们已于 2024.8.30 完成了本作品的翻译工作！🎉🎉</p><p>作品介绍：<a href='https://bangumi.tv/subject/510504' target='_blank'>Bangumi</a>、<a href='https://vndb.org/v37097' target='_blank'>VNDB</a></p><p>参与人员：</p><ul><li>scientificworld（初翻、程序、修图）</li><li>Misaka13514（校对、润色、测试）</li></ul><p><a type='button' class='btn btn-outline-danger' href='https://github.com/vanilla-translation-group/oozora_gift_edition_chs/releases/download/v1.0/Kotori_patch_installer.exe' target='_blank'><i class='bi bi-download'></i> 获取补丁</a> <a href='https://github.com/vanilla-translation-group/oozora_gift_edition_chs/' target='_blank' type='button' class='btn btn-outline-dark'><i class='bi bi-github'></i> GitHub 页面</a></p>"
-            }
-        }
-    ]
+  "sub": [
+    {
+      "id": "hamidashi_creative_anime",
+      "title": "常轨脱离Creative",
+      "subtitle": "ハミダシクリエイティブ",
+      "list": [
+        ["状态", "进行中"],
+        ["进度", "3话"]
+      ],
+      "image": "hamikuri_anime.jpg",
+      "detail": {
+        "html": "<p>作品介绍：<a href='https://bangumi.tv/subject/437532' target='_blank'>Bangumi</a>、<a href='https://anidb.net/anime/18814' target='_blank'>AniDB</a></p><p><a type='button' class='btn btn-outline-danger' href='https://github.com/vanilla-translation-group/subtitles/tree/main/Hamidashi_Creative' target='_blank'><i class='bi bi-download'></i> 获取字幕</a></p>"
+      }
+    },
+    {
+      "id": "oomuro-ke_dear_friends",
+      "title": "大室家 dear friends",
+      "list": [
+        ["状态", "已终止"],
+        ["进度", "听写、时轴完成，翻译部分完成"]
+      ],
+      "image": "dearfriends.jpg",
+      "detail": {
+        "html": "<p>我们此前已经完成了《大室家 dear friends》的听写和时轴工作。但由于人手不足，且已有其他字幕组完成了本作的字幕，出于以上原因我们决定终止本作的字幕制作，非常抱歉。</p><p>该作品推荐字幕组：提灯喵汉化组。</p><p>作品介绍：<a href='https://bangumi.tv/subject/448657' target='_blank'>Bangumi</a>、<a href='https://anidb.net/anime/18146' target='_blank'>AniDB</a></p><p><a type='button' class='btn btn-outline-danger' href='https://github.com/vanilla-translation-group/subtitles/tree/main/Oomuro-ke_Dear_Friends' target='_blank'><i class='bi bi-download'></i> 获取字幕（仅日文）</a></p>"
+      }
+    }
+  ],
+  "chs": [
+    {
+      "id": "miazora_fd",
+      "title": "抬头看看吧，看那天上的繁星 FINE DAYS",
+      "subtitle": "見上げてごらん、夜空の星を FINE DAYS",
+      "list": [
+        ["状态", "进行中"],
+        ["进度", "阳南线 7%"]
+      ],
+      "image": "yozora_fd.jpg",
+      "detail": {
+        "html": "<p>我们当前正在进行阳南线的翻译工作，敬请期待！</p><p>作品介绍：<a href='https://bangumi.tv/subject/167726' target='_blank'>Bangumi</a>、<a href='https://vndb.org/v18907' target='_blank'>VNDB</a></p>"
+      }
+    },
+    {
+      "id": "konosora_ge_ageha",
+      "title": "在这苍穹展翅 Gift Edition Ageha",
+      "subtitle": "この大空に、翼をひろげて GIFT EDITION あげはVer",
+      "list": [
+        ["状态", "已完成"],
+        ["进度", "100%"]
+      ],
+      "image": "oozora_gift_edition_ageha.jpg",
+      "detail": {
+        "html": "<p>我们已于 2024.8.30 完成了本作品的翻译工作！🎉🎉</p><p>作品介绍：<a href='https://bangumi.tv/subject/510506' target='_blank'>Bangumi</a>、<a href='https://vndb.org/v37097' target='_blank'>VNDB</a></p><p>参与人员：</p><ul><li>scientificworld（初翻、程序、修图）</li><li>Misaka13514（校对、润色、测试）</li></ul><p><a type='button' class='btn btn-outline-danger' href='https://github.com/vanilla-translation-group/oozora_gift_edition_chs/releases/download/v1.0/Ageha_patch_installer.exe' target='_blank'><i class='bi bi-download'></i> 获取补丁</a> <a href='https://github.com/vanilla-translation-group/oozora_gift_edition_chs/' target='_blank' type='button' class='btn btn-outline-dark'><i class='bi bi-github'></i> GitHub 页面</a></p>"
+      }
+    },
+    {
+      "id": "konosora_ge_kotori",
+      "title": "在这苍穹展翅 Gift Edition Kotori",
+      "subtitle": "この大空に、翼をひろげて GIFT EDITION 小鳥Ver",
+      "list": [
+        ["状态", "已完成"],
+        ["进度", "100%"]
+      ],
+      "image": "oozora_gift_edition_kotori.jpg",
+      "detail": {
+        "html": "<p>我们已于 2024.8.30 完成了本作品的翻译工作！🎉🎉</p><p>作品介绍：<a href='https://bangumi.tv/subject/510504' target='_blank'>Bangumi</a>、<a href='https://vndb.org/v37097' target='_blank'>VNDB</a></p><p>参与人员：</p><ul><li>scientificworld（初翻、程序、修图）</li><li>Misaka13514（校对、润色、测试）</li></ul><p><a type='button' class='btn btn-outline-danger' href='https://github.com/vanilla-translation-group/oozora_gift_edition_chs/releases/download/v1.0/Kotori_patch_installer.exe' target='_blank'><i class='bi bi-download'></i> 获取补丁</a> <a href='https://github.com/vanilla-translation-group/oozora_gift_edition_chs/' target='_blank' type='button' class='btn btn-outline-dark'><i class='bi bi-github'></i> GitHub 页面</a></p>"
+      }
+    }
+  ]
 }

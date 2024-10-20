@@ -147,6 +147,29 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     margin-bottom: 20px;
 }
+
+/* NSFW 图片遮罩样式 */
+.nsfw_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    z-index: 1; /* 确保遮罩层位于图片上方 */
+    backdrop-filter: blur(5px); /* 添加高斯模糊效果 */
+    -webkit-backdrop-filter: blur(5px); /* 兼容 Safari 浏览器 */
+    opacity: 1; /* 初始完全可见 */
+    transition: opacity 0.5s ease; /* 过渡效果 */
+}
 `;
 
 const navbar_template = `
@@ -278,52 +301,81 @@ function getRandomString(length) {
 
 let workMapping = new Object();
 
-function get_work_card(work){
+function get_work_card(work) {
     let work_card_template = `
     <div style="margin-top: 20px;"></div>
-<div class="card work_card" ${typeof work.id !== "undefined" ? `id="${work.id}"` : ``}>
-    <div class="card-body">
-        <div class="container">
-            <div class="row">
-                <div class="col-2">
-                    <img src="../images/${work.image}" class="work_card_img" />
-                </div>
-                <div class="col-10">
-                    <h5>${work.title}</h5>
-                    ${typeof(work.subtitle)!=="undefined"?`<h6 style="color:grey;">${work.subtitle}</h6>`:``}
-                    
+    <div class="card work_card" ${typeof work.id !== "undefined" ? `id="${work.id}"` : ``}>
+        <div class="card-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="work_image_container" style="position: relative;">
+`;
 
-`;
-    for(let i = 0; i < work.list.length; i++){
-        if(work.list[i][0] === "状态"){
+    // 判断是否为外链
+    let imageSrc = work.image.startsWith("http") ? work.image : `../images/${work.image}`;
+
+    work_card_template += `
+                            <img src="${imageSrc}" class="work_card_img" />
+                        `;
+    // 如果是 NSFW 内容，添加遮罩
+    if (work.nsfw) {
+        work_card_template += `
+                            <div class="nsfw_overlay">
+                                <i class="bi bi-eye-fill" style="font-size: 2rem;"></i>
+                            </div>
+                        `;
+        document.addEventListener("click", function(e) {
+            const overlayElement = e.target.closest(`#${work.id}`)?.querySelector(".nsfw_overlay");
+            if (overlayElement) {
+                overlayElement.style.opacity = "0"; // 逐渐减少透明度
+        
+                // 延迟将 display 设置为 none，等待过渡效果完成
+                setTimeout(() => {
+                    overlayElement.style.display = "none";
+                }, 500); // 延迟时间与 CSS 中的过渡时间一致（0.5秒）
+            }
+        });
+    }
+
+    work_card_template += `
+                        </div>
+                    </div>
+                    <div class="col-10">
+                        <h5>${work.title}</h5>
+                        ${typeof(work.subtitle)!=="undefined"?`<h6 style="color:grey;">${work.subtitle}</h6>`:``}
+    `;
+
+    for (let i = 0; i < work.list.length; i++) {
+        if (work.list[i][0] === "状态") {
             work_card_template += `
-                    <li>${work.list[i][0]}：<span style="color:${work.list[i][1]==="已完成"?"deepskyblue":(work.list[i][1]==="已终止"?"red":(work.list[i][1]==="进行中"?"orange":"black"))}">${work.list[i][1]==="已完成"?`<i class="bi bi-check2"></i>`:(work.list[i][1]==="已终止"?`<i class="bi bi-ban"></i>`:(work.list[i][1]==="进行中"?`<i class="bi bi-hourglass-split"></i>`:""))} ${work.list[i][1]}</span></li>
-`;
+                        <li>${work.list[i][0]}：<span style="color:${work.list[i][1]==="已完成"?"deepskyblue":(work.list[i][1]==="已终止"?"red":(work.list[i][1]==="进行中"?"orange":"black"))}">${work.list[i][1]==="已完成"?`<i class="bi bi-check2"></i>`:(work.list[i][1]==="已终止"?`<i class="bi bi-ban"></i>`:(work.list[i][1]==="进行中"?`<i class="bi bi-hourglass-split"></i>`:""))} ${work.list[i][1]}</span></li>
+            `;
         } else {
             work_card_template += `
-                    <li>${work.list[i][0]}：${work.list[i][1]}</li>
-`;
+                        <li>${work.list[i][0]}：${work.list[i][1]}</li>
+            `;
         }
-        
     }
 
     let randomStr = getRandomString(8);
     
     work_card_template += `
+                    </div>
                 </div>
             </div>
-        </div>
-        <br />
+            <br />
 
-        ${typeof(work.detail)=== "undefined"?"<!--":""}
-        <hr />
-        <p class="see_detail_btn"><a href="javascript:void(0)" id="see_detail_btn_${randomStr}">查看详情 <i class="bi bi-caret-down"></i></a></p>
-        <div id="see_detail_btn_${randomStr}_content" class="see_detail_btn_content" style="display:none"></div>
-        ${typeof(work.detail)=== "undefined"?"-->":""}
+            ${typeof(work.detail)=== "undefined"?"<!--":""}
+            <hr />
+            <p class="see_detail_btn"><a href="javascript:void(0)" id="see_detail_btn_${randomStr}">查看详情 <i class="bi bi-caret-down"></i></a></p>
+            <div id="see_detail_btn_${randomStr}_content" class="see_detail_btn_content" style="display:none"></div>
+            ${typeof(work.detail)=== "undefined"?"-->":""}
+        </div>
     </div>
-</div>
-`;
-    if(typeof(work.detail) === "undefined") {
+    `;
+
+    if (typeof(work.detail) === "undefined") {
         return work_card_template;
     }
 
