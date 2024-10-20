@@ -325,17 +325,6 @@ function get_work_card(work) {
                                 <i class="bi bi-eye-fill" style="font-size: 2rem;"></i>
                             </div>
                         `;
-        document.addEventListener("click", function(e) {
-            const overlayElement = e.target.closest(`#${work.id}`)?.querySelector(".nsfw_overlay");
-            if (overlayElement) {
-                overlayElement.style.opacity = "0"; // 逐渐减少透明度
-        
-                // 延迟将 display 设置为 none，等待过渡效果完成
-                setTimeout(() => {
-                    overlayElement.style.display = "none";
-                }, 500); // 延迟时间与 CSS 中的过渡时间一致（0.5秒）
-            }
-        });
     }
 
     work_card_template += `
@@ -417,6 +406,17 @@ function render_detail(){
     });
 }
 
+function render_nsfw_overlay() {
+    document.querySelectorAll(".nsfw_overlay").forEach(element => {
+        element.addEventListener("click", function() {
+            element.style.opacity = 0;
+            setTimeout(() => {
+                element.style.display = "none";
+            }, 500);
+        });
+    });
+}
+
 function render(){
     document.getElementById("universal_stylesheet").innerHTML = universal_stylesheet;
     switch(current_page){
@@ -427,6 +427,7 @@ function render(){
                     document.getElementById("work_cards").insertAdjacentHTML("beforeend", get_work_card(data.sub[i]));
                 }
                 render_detail();
+                render_nsfw_overlay();
             });
             break;
         case 'chs':
@@ -436,6 +437,7 @@ function render(){
                     document.getElementById("work_cards").insertAdjacentHTML("beforeend", get_work_card(data.chs[i]));
                 }
                 render_detail();
+                render_nsfw_overlay();
             });
             break;
         case 'blog':
