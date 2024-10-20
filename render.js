@@ -180,7 +180,7 @@ const navbar_template = `
 `;
 
 const bottom_template = `
-<p><a href="https://github.com/vanilla-translation-group" target="_blank">访问我们的 GitHub 页面</a></p>
+<p><i class="bi bi-github"></i> <a href="https://github.com/vanilla-translation-group" target="_blank">访问我们的 GitHub 页面</a></p>
 `;
 
 const sub_page_template = `
