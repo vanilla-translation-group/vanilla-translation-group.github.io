@@ -565,3 +565,4 @@ document.querySelectorAll("[data-bs-theme-value]").forEach(button => {
 });
 
 updateTheme();
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateTheme);
