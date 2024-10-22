@@ -66,5 +66,31 @@
         "html": "<p>我们已于 2024.8.30 完成了本作品的翻译工作！🎉🎉</p><p>作品介绍：<a href='https://bangumi.tv/subject/510504' target='_blank'>Bangumi</a>、<a href='https://vndb.org/v37097' target='_blank'>VNDB</a></p><p>参与人员：</p><ul><li>scientificworld（初翻、程序、修图）</li><li>Misaka13514（校对、润色、测试）</li></ul><p><a type='button' class='btn btn-outline-danger' href='https://github.com/vanilla-translation-group/oozora_gift_edition_chs/releases/download/v1.0/Kotori_patch_installer.exe' target='_blank'><i class='bi bi-download'></i> 获取补丁</a> <a href='https://github.com/vanilla-translation-group/oozora_gift_edition_chs/' target='_blank' type='button' class='btn btn-outline-dark'><i class='bi bi-github'></i> GitHub 页面</a></p>"
       }
     }
+  ],
+  "blog_articles": [
+    {
+      "filename": "test.docx",
+      "isTestArticle": true,
+      "title": "Word文档测试",
+      "author": "Test",
+      "date": "2024/10/21",
+      "tags": ["测试", "测试2"]
+    },
+    {
+      "filename": "test1.md",
+      "isTestArticle": true,
+      "title": "测试文章1",
+      "author": "Test",
+      "date": "2024/10/21",
+      "tags": ["测试", "测试2"]
+    },
+    {
+      "filename": "test2.md",
+      "isTestArticle": true,
+      "title": "测试文章2",
+      "author": "Test",
+      "date": "2024/10/21",
+      "tags": ["测试", "测试2"]
+    }
   ]
 }

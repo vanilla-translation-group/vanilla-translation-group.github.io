@@ -1,5 +1,5 @@
-const universal_stylesheet = `
-@media (min-width: 1085px) { 
+const universal_stylesheet = /* css */ `
+@media (min-width: 1150px) { 
     .nav-item {
         background-color: white;
         margin-left: 14px;
@@ -30,10 +30,10 @@ const universal_stylesheet = `
     }
 }
 
-@media (min-width: 1085px) and (max-width: 1200px) {
+@media (max-width: 1250px) {
     a.navbar-brand {
-        width: 60vw;
         display:block;
+        width: 35vw;
     }
 
     a.navbar-brand span {
@@ -58,7 +58,7 @@ const universal_stylesheet = `
 }
 
 * {
-    font-family: 'Segoe UI', 'Microsoft YaHei', '微软雅黑', 'PingFang SC', '苹方', 'HarmonyOS Sans', 'Mi Sans', 'Noto Sans CJK SC', 'Source Han Sans', '思源黑体 CN', '文泉驿微米黑', 'Droid Sans Fallback', sans-serif;
+    font-family: sans-serif;
 }
 
 #page_content {
@@ -203,9 +203,36 @@ html[data-bs-theme="dark"] .startup_bg_content {
 html[data-bs-theme="dark"] .see_detail_btn_content {
     background-color: var(--see-detail-bg-color);
 }
+
+.article_list_link::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(252, 74, 74);
+    transform: scaleX(0);
+    transition: transform 1.1s ease;
+}
+
+.article_list_link:hover::before {
+    transform: scaleX(1);
+}
+
+.article_list_link:hover {
+    color: rgba(252, 130, 130);
+}
+
+.article_list_link {
+    position: relative;
+    text-decoration: none
+}
+
 `;
 
-const navbar_template = `
+const navbar_template = /* html */ `
 <nav class="navbar navbar-expand-lg sticky-top" id="navbar">
     <div class="container-fluid">
         <a class="navbar-brand" href="../index.html">Vanilla Translation Group <span
@@ -218,16 +245,16 @@ const navbar_template = `
         <div class="collapse navbar-collapse" id="navbar_content">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link${current_page==="about"?" active":""}" href="../about/"><i class="bi bi-info-square"></i> 关于我们</a>
+                    <a class="nav-link${current_page === "about" ? " active" : ""}" href="../about/"><i class="bi bi-info-square"></i> 关于我们</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link${current_page==="chs"?" active":""}" href="../chs/"><i class="bi bi-file-earmark-text"></i> 作品集 · 汉化</a>
+                    <a class="nav-link${current_page === "chs" ? " active" : ""}" href="../chs/"><i class="bi bi-file-earmark-text"></i> 作品集 · 汉化</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link${current_page==="sub"?" active":""}" href="../sub/"><i class="bi bi-film"></i> 作品集 · 字幕</a>
+                    <a class="nav-link${current_page === "sub" ? " active" : ""}" href="../sub/"><i class="bi bi-film"></i> 作品集 · 字幕</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link${current_page==="blog"?" active":""}" href="../blog/"><i class="bi bi-book"></i> 博客 & 研究</a>
+                    <a class="nav-link${current_page === "blog" ? " active" : ""}" href="../blog/"><i class="bi bi-book"></i> 博客 & 研究</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
@@ -264,11 +291,11 @@ const navbar_template = `
 </nav>
 `;
 
-const bottom_template = `
+const bottom_template = /* html */ `
 <div style="margin-top: 80px;"></div><hr /><p><i class="bi bi-github"></i> <a href="https://github.com/vanilla-translation-group" target="_blank">访问我们的 GitHub 页面</a></p>
 `;
 
-const sub_page_template = `
+const sub_page_template = /* html */ `
 <div class="startup_bg">
     <div class="startup_bg_content">
         <h1>作品集 · 字幕</h1>
@@ -281,7 +308,7 @@ const sub_page_template = `
 </div>
 `;
 
-const chs_page_template = `
+const chs_page_template = /* html */ `
 <div class="startup_bg2">
     <div class="startup_bg_content">
         <h1>作品集 · 汉化</h1>
@@ -294,7 +321,7 @@ const chs_page_template = `
 </div>
 `;
 
-const blog_page_template = `
+const blog_page_template = /* html */ `
 <div class="startup_bg2">
     <div class="startup_bg_content">
         <h1>博客 & 研究</h1>
@@ -307,7 +334,7 @@ const blog_page_template = `
 </div>
 `;
 
-const about_page_template = `
+const about_page_template = /* html */ `
 <div class="startup_bg2">
     <div class="startup_bg_content">
         <h1>关于我们</h1>
@@ -317,7 +344,7 @@ const about_page_template = `
 <div class="container" id="page_content">
     <div style="text-indent: 25px each-line;">
         <p>我们是由一群计算机和 ACGN 爱好者组成的一个兴趣使然的翻译同好会。gal、动画、漫画之类都有在翻译，也算是涉猎广泛了。嘛，总之是个比较松散随性的组织，组里也没有什么细化的分工。<br>
-           关于这个名字的来由，是因为组员们都很喜欢猫娘，尤以 NEKOPARA 的香子兰为最。不过我们也有别的马甲，比如<span style="background: black; color: black;">+JctopiXLd7NsSVMWfsQ-</span>什么的。</p>
+            关于这个名字的来由，是因为组员们都很喜欢猫娘，尤以 NEKOPARA 的香子兰为最。不过我们也有别的马甲，比如<span style="background: black; color: black;">+JctopiXLd7NsSVMWfsQ-</span>什么的。</p>
         <p>一个坑都是这么个流程：组员冒出一个点子（诶我觉得这作还行也没人做）-&gt; 总之自己先开干（之后再拉其他人下水）-&gt; 干完了（发布）/ 各种原因干不完（弃坑）</p>
         <p>由于挖坑似乎一不小心挖多了所以现在正处于急需人手状态，最缺的还是翻译（含校润）。要求是翻译出来的文本能让人读懂且基本符合原意（特殊情况除外）就行，即“达”和“信”，至于“雅”可以暂不考虑。<br>
         如果你看到这里还有点点兴趣的话<del>（应该不会有吧）</del>，可以在<a href="https://github.com/vanilla-translation-group/vanilla-translation-group.github.io/issues/new?assignees=&labels=&projects=&template=application_form.md&title=%E7%94%B3%E8%AF%B7%E8%A1%A8">这里</a>填写申请表加入我们，<del>一起愉快的摸鱼划水</del>。</p>
@@ -352,7 +379,7 @@ function getRandomString(length) {
 let workMapping = new Object();
 
 function get_work_card(work) {
-    let work_card_template = `
+    let work_card_template = /* html */ `
     <div class="card work_card" ${typeof work.id !== "undefined" ? `id="${work.id}"` : ``}>
         <div class="card-body">
             <div class="container">
@@ -364,55 +391,55 @@ function get_work_card(work) {
     // 判断是否为外链
     let imageSrc = work.image.startsWith("http") ? work.image : `../images/${work.image}`;
 
-    work_card_template += `
+    work_card_template += /* html */ `
                             <img src="${imageSrc}" class="work_card_img" />
                         `;
     // 如果是 NSFW 内容，添加遮罩
     if (work.nsfw) {
-        work_card_template += `
+        work_card_template += /* html */ `
                             <div class="nsfw_overlay d-flex justify-content-center align-items-center">
                                 <i class="bi bi-eye-fill" style="font-size: 2rem;"></i>
                             </div>
                         `;
     }
 
-    work_card_template += `
+    work_card_template += /* html */ `
                         </div>
                     </div>
                     <div class="col-10">
                         <h5>${work.title}</h5>
-                        ${typeof(work.subtitle)!=="undefined"?`<h6 style="color:grey;">${work.subtitle}</h6>`:``}
+                        ${typeof (work.subtitle) !== "undefined" ? `<h6 style="color:grey;">${work.subtitle}</h6>` : ``}
     `;
 
     for (let i = 0; i < work.list.length; i++) {
         if (work.list[i][0] === "状态") {
-            work_card_template += `
-                        <li>${work.list[i][0]}：<span style="color:${work.list[i][1]==="已完成"?"deepskyblue":(work.list[i][1]==="已终止"?"red":(work.list[i][1]==="进行中"?"orange":"var(--bs-body-color)"))}">${work.list[i][1]==="已完成"?`<i class="bi bi-check2"></i>`:(work.list[i][1]==="已终止"?`<i class="bi bi-ban"></i>`:(work.list[i][1]==="进行中"?`<i class="bi bi-hourglass-split"></i>`:""))} ${work.list[i][1]}</span></li>
+            work_card_template += /* html */ `
+                        <li>${work.list[i][0]}：<span style="color:${work.list[i][1] === "已完成" ? "deepskyblue" : (work.list[i][1] === "已终止" ? "red" : (work.list[i][1] === "进行中" ? "orange" : "var(--bs-body-color)"))}">${work.list[i][1] === "已完成" ? `<i class="bi bi-check2"></i>` : (work.list[i][1] === "已终止" ? `<i class="bi bi-ban"></i>` : (work.list[i][1] === "进行中" ? `<i class="bi bi-hourglass-split"></i>` : ""))} ${work.list[i][1]}</span></li>
             `;
         } else {
-            work_card_template += `
+            work_card_template += /* html */ `
                         <li>${work.list[i][0]}：${work.list[i][1]}</li>
             `;
         }
     }
 
     let randomStr = getRandomString(8);
-    
-    work_card_template += `
+
+    work_card_template += /* html */ `
                     </div>
                 </div>
             </div>
 
-            ${typeof(work.detail)=== "undefined"?"<!--":""}
+            ${typeof (work.detail) === "undefined" ? "<!--" : ""}
             <hr />
             <p class="see_detail_btn"><a href="javascript:void(0)" id="see_detail_btn_${randomStr}">查看详情 <i class="bi bi-caret-down"></i></a></p>
             <div id="see_detail_btn_${randomStr}_content" class="see_detail_btn_content" style="display:none"></div>
-            ${typeof(work.detail)=== "undefined"?"-->":""}
+            ${typeof (work.detail) === "undefined" ? "-->" : ""}
         </div>
     </div>
     `;
 
-    if (typeof(work.detail) === "undefined") {
+    if (typeof (work.detail) === "undefined") {
         return work_card_template;
     }
 
@@ -431,7 +458,7 @@ function get_work_card(work) {
  */
 function throttle(func, delay) {
     let lastCall = 0;
-    return function(...args) {
+    return function (...args) {
         const now = new Date().getTime();
         if (now - lastCall < delay) {
             return;
@@ -441,20 +468,20 @@ function throttle(func, delay) {
     };
 }
 
-function render_detail(){
+function render_detail() {
     document.querySelectorAll(".see_detail_btn a").forEach(element => {
-        element.addEventListener("click", throttle(function(){
+        element.addEventListener("click", throttle(function () {
             workMapping[element.id].currentStatus = !workMapping[element.id].currentStatus;
-            if(workMapping[element.id].currentStatus){
-                document.getElementById(element.id+"_content").innerHTML = workMapping[element.id]["html"];
-                document.getElementById(element.id+"_content").style.display = "block";
-                document.getElementById(element.id+"_content").style.maxHeight = document.getElementById(element.id+"_content").scrollHeight + 20 + "px";
+            if (workMapping[element.id].currentStatus) {
+                document.getElementById(element.id + "_content").innerHTML = workMapping[element.id]["html"];
+                document.getElementById(element.id + "_content").style.display = "block";
+                document.getElementById(element.id + "_content").style.maxHeight = document.getElementById(element.id + "_content").scrollHeight + 20 + "px";
                 element.innerHTML = "收起详情 <i class='bi bi-caret-up-fill'></i>";
             } else {
                 element.innerHTML = "查看详情 <i class='bi bi-caret-down'></i>";
-                document.getElementById(element.id+"_content").style.maxHeight = 0;
+                document.getElementById(element.id + "_content").style.maxHeight = 0;
                 setTimeout(() => {
-                    document.getElementById(element.id+"_content").style.display = "none";
+                    document.getElementById(element.id + "_content").style.display = "none";
                 }, 300);
             }
             updateButtonOutline(getActualTheme());
@@ -462,12 +489,95 @@ function render_detail(){
     });
 }
 
+function getUrlArgs() {
+    let args = new Object();
+    let query = location.search.substring(1);
+    let pairs = query.split("&");
+    for (let i = 0; i < pairs.length; i++) {
+        let pos = pairs[i].indexOf("=");
+        if (pos === -1) {
+            continue;
+        }
+        let name = pairs[i].substring(0, pos);
+        let value = pairs[i].substring(pos + 1);
+        args[name] = value;
+    }
+    return args;
+}
+
+async function render_article_page() {
+    const article_filename = getUrlArgs()["id"] + ".md";
+    let articleObj = new Object();
+    for(let i = 0; i < all_articles.length; i++) {
+        if (all_articles[i].filename === article_filename) {
+            document.title = all_articles[i].title + " - 香子兰翻译同好会";
+            articleObj = all_articles[i];
+            break;
+        }
+    }
+    await fetch(`./${article_filename}`).then(response => response.text()).then(text => {
+        const tagHtml = articleObj.tags.map(tag => `<a href="javascript:void(0)">${tag}</a>`).join("、");
+        document.body.insertAdjacentHTML("beforeend", navbar_template + /* html */`
+            <div class="startup_bg2">
+                <div class="startup_bg_content">
+                    <h1>博客 & 研究</h1>
+                    <p>汉化作品发布博客、汉化过程中的一些技术成果等。</p>
+                </div>
+            </div>
+            <div class="container" id="page_content">
+            <h1>${articleObj["title"]}</h1>
+            <p style="color: grey"><i class="bi bi-tags-fill"></i> 标签：${tagHtml} <i class="bi bi-person-fill" style="margin-left:16px"></i> 作者：${articleObj["author"]}<br /><i class="bi bi-clock"></i> 发布时间：${articleObj["date"]}</p>
+            <hr /><br />
+
+            ${marked.marked(text)}
+            
+            <br /><br />
+            ${bottom_template}
+            </div>
+            `);
+    });
+}
+
+function render_article_list(){
+    document.querySelector("body").insertAdjacentHTML("beforeend", /* html */ `
+    <div class="startup_bg2">
+        <div class="startup_bg_content">
+            <h1>博客 & 研究</h1>
+            <p>汉化作品发布博客、汉化过程中的一些技术成果等。</p>
+        </div>
+    </div>
+    <div class="container" id="page_content">
+        <h1>文章列表</h1>
+        <ul id="article_list" class="list-group"></ul>
+        ${bottom_template}
+    </div>
+    `);
+    all_articles.forEach(article => {
+        const fileAbsoluteURL = new URL(article.filename, window.location.href).href;
+        const tagHtml = article.tags.map(tag => `<a href="javascript:void(0)">${tag}</a>`).join("、");
+        document.getElementById("article_list").insertAdjacentHTML("beforeend", /* html */ `
+            <br />
+        <li class="list-group-item" style="padding: 20px 30px${article.isTestArticle===true&&getUrlArgs()["test_mode"]==="true"?"":";display:none;"}">
+            <h2 style="margin-bottom:15px;"><a href="${article.filename.split(".")[1]==="md"?`article.html?id=${article.filename.split(".")[0]}`:"https://view.officeapps.live.com/op/view.aspx?src="+fileAbsoluteURL}" class="article_list_link">${article.title}</a></h2>
+            <span style="color:grey"><i class="bi bi-clock"></i> ${article.date} <i class="bi bi-tags-fill" style="margin-left: 16px;"></i> ${tagHtml} <i class="bi bi-person-fill" style="margin-left: 16px;"></i> 发布者：${article.author}</span>
+            
+            <br />
+        </li>
+        `)}
+    );
+    if (all_articles.length===0 || all_articles.every(article => article.isTestArticle === true) && getUrlArgs()["test_mode"] !== "true") {
+        document.querySelector("#article_list").insertAdjacentHTML("afterBegin", /* html */ `
+            <p>啊嘞嘞，看起来当前没有文章呢~</p>
+        `);
+    }
+}
+
 /**
  * Add the event listener to the NSFW overlay to hide it when clicked
  */
 function render_nsfw_overlay() {
     document.querySelectorAll(".nsfw_overlay").forEach(element => {
-        element.addEventListener("click", function() {
+        element.addEventListener("click", function () {
             element.style.opacity = 0;
             setTimeout(() => {
                 element.style.display = "none";
@@ -476,13 +586,15 @@ function render_nsfw_overlay() {
     });
 }
 
-function render(){
+var all_articles = [];
+
+async function render() {
     document.getElementById("universal_stylesheet").innerHTML = universal_stylesheet;
-    switch(current_page){
+    switch (current_page) {
         case 'sub':
             document.body.insertAdjacentHTML("beforeend", navbar_template + sub_page_template);
             fetch('../data.json').then(response => response.json()).then(data => {
-                for(let i = 0; i < data.sub.length; i++){
+                for (let i = 0; i < data.sub.length; i++) {
                     document.getElementById("work_cards").insertAdjacentHTML("beforeend", get_work_card(data.sub[i]));
                 }
                 render_detail();
@@ -492,7 +604,7 @@ function render(){
         case 'chs':
             document.body.insertAdjacentHTML("beforeend", navbar_template + chs_page_template);
             fetch('../data.json').then(response => response.json()).then(data => {
-                for(let i = 0; i < data.chs.length; i++){
+                for (let i = 0; i < data.chs.length; i++) {
                     document.getElementById("work_cards").insertAdjacentHTML("beforeend", get_work_card(data.chs[i]));
                 }
                 render_detail();
@@ -500,15 +612,19 @@ function render(){
             });
             break;
         case 'blog':
-            document.body.insertAdjacentHTML("beforeend", navbar_template + blog_page_template);
+            all_articles = await fetch("../data.json").then(response => response.json()).then(data => data.blog_articles);
+            document.body.insertAdjacentHTML("beforeend", navbar_template);
+            render_article_list();
             break;
         case 'about':
             document.body.insertAdjacentHTML("beforeend", navbar_template + about_page_template);
             break;
+        case "article":
+            all_articles = await fetch("../data.json").then(response => response.json()).then(data => data.blog_articles);
+            await render_article_page();
+            break;
     }
 }
-
-render();
 
 /**
  * Get the current theme mode from localStorage
@@ -594,14 +710,15 @@ function updateButtonOutline(theme) {
     }
 }
 
-// Add event listener for theme change
-document.querySelectorAll("[data-bs-theme-value]").forEach(button => {
-    button.addEventListener("click", function () {
-        const selectedTheme = this.getAttribute("data-bs-theme-value");
-        localStorage.setItem("theme", selectedTheme);
-        updateTheme();
+render().then(() => {
+    updateTheme();
+    // Add event listener for theme change
+    document.querySelectorAll("[data-bs-theme-value]").forEach(button => {
+        button.addEventListener("click", function () {
+            const selectedTheme = this.getAttribute("data-bs-theme-value");
+            localStorage.setItem("theme", selectedTheme);
+            updateTheme();
+        });
     });
-});
-
-updateTheme();
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateTheme);
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateTheme);
+})
