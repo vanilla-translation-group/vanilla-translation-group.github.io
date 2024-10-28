@@ -380,7 +380,7 @@ let workMapping = new Object();
 
 function get_work_card(work) {
     let work_card_template = /* html */ `
-    <div class="card work_card" ${typeof work.id !== "undefined" ? `id="${work.id}"` : ``}>
+    <div class="card work_card" ${typeof work.id !== "undefined" ? `id="${work.id}"` : ``} ${work.hidden ? `style="display: none"` : ``}>
         <div class="card-body">
             <div class="container">
                 <div class="row">
