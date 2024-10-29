@@ -586,6 +586,16 @@ function render_nsfw_overlay() {
     });
 }
 
+function render_works_page(data) {
+    for (let i = 0; i < data.length; i++) {
+        document.getElementById("work_cards").insertAdjacentHTML("beforeend", get_work_card(data[i]));
+    }
+    render_detail();
+    render_nsfw_overlay();
+    if (location.hash)
+        (document.querySelector(location.hash) ?? {style: {}}).style.display = "block";
+}
+
 var all_articles = [];
 
 async function render() {
@@ -594,21 +604,13 @@ async function render() {
         case 'sub':
             document.body.insertAdjacentHTML("beforeend", navbar_template + sub_page_template);
             fetch('../data.json').then(response => response.json()).then(data => {
-                for (let i = 0; i < data.sub.length; i++) {
-                    document.getElementById("work_cards").insertAdjacentHTML("beforeend", get_work_card(data.sub[i]));
-                }
-                render_detail();
-                render_nsfw_overlay();
+                render_works_page(data.sub);
             });
             break;
         case 'chs':
             document.body.insertAdjacentHTML("beforeend", navbar_template + chs_page_template);
             fetch('../data.json').then(response => response.json()).then(data => {
-                for (let i = 0; i < data.chs.length; i++) {
-                    document.getElementById("work_cards").insertAdjacentHTML("beforeend", get_work_card(data.chs[i]));
-                }
-                render_detail();
-                render_nsfw_overlay();
+                render_works_page(data.chs);
             });
             break;
         case 'blog':
