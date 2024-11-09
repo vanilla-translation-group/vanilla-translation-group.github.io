@@ -362,6 +362,7 @@ const about_page_template = /* html */ `
     <h2>各平台发布帐号</h2>
     <ul>
         <li><a href="https://mikanani.me/Home/PublishGroup/982" target="_blank">Mikan Project / 蜜柑计划</a></li>
+        <li><a href="https://dmhy.org/topics/list/team_id/855" target="_blank">DMHY / 動漫花園</a></li>
     </ul>
     ${bottom_template}
 </div>
