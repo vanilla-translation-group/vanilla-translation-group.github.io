@@ -28,6 +28,19 @@
   ],
   "chs": [
     {
+      "id": "shirotsume_ex",
+      "title": "白诘草话-番外篇- 津名川家的圣诞节",
+      "subtitle": "白詰草話-番外編- 津名川さん家のクリスマス",
+      "list": [
+        ["状态", "进行中"],
+        ["进度", "30%"]
+      ],
+      "image": "shirotsume_ex.jpg",
+      "detail": {
+        "html": "<p>Working in progress.</p><p>Scheduled release date: 2024-12-25</p><p>作品介绍：<a href='https://bangumi.tv/subject/512180' target='_blank'>Bangumi</a>、<a href='https://vndb.org/v11443' target='_blank'>VNDB</a></p>"
+      }
+    },
+    {
       "id": "imhfd",
       "hidden": true,
       "title": "在这苍穹展翅 飞行日志",
