@@ -357,6 +357,7 @@ const about_page_template = /* html */ `
         <li>scientificworld（翻译、程序）</li>
         <li>杏乃夏未（翻译、特效字幕）</li>
         <li>Lockinwize Lolite / 洛仙璃（翻译协力）</li>
+        <li>Muji Togawa / 戸川夢児（润色）</li>
     </ul>
     <div style="margin-top: 40px;"></div>
     <h2>各平台发布帐号</h2>
