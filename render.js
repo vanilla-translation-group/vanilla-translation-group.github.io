@@ -352,10 +352,10 @@ const about_page_template = /* html */ `
     <div style="margin-top: 40px;"></div>
     <h2>成员列表</h2>
     <ul>
-        <li>Misaka13514 / 欠陥電気（翻译、测试、修图）</li>
+        <li>Misaka13514 / 欠陥電気（翻译、特效字幕、测试）</li>
         <li>baiyuanneko / 柏园猫（网页开发）</li>
-        <li>scientificworld（翻译、程序）</li>
-        <li>杏乃夏未（翻译、特效字幕）</li>
+        <li>scientificworld（程序、翻译、修图）</li>
+        <li>natsumi / 杏乃夏未（H翻译）</li>
         <li>Lockinwize Lolite / 洛仙璃（翻译协力）</li>
         <li>Muji Togawa / 戸川夢児（润色）</li>
     </ul>
