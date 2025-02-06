@@ -28,6 +28,19 @@
   ],
   "chs": [
     {
+      "id": "yarayaru",
+      "title": "被关在不做XX就出不去的房间里结果做了也没出去所以继续涩涩的故事",
+      "subtitle": "ヤっても出られない部屋に閉じ込められたので引き続きもっとヤる話",
+      "list": [
+        ["状态", "进行中"],
+        ["进度", "体验版 60%"]
+      ],
+      "image": "yarayaru.jpg",
+      "detail": {
+        "html": "<p>我们当前正在进行体验版内容的翻译工作，敬请期待！</p><p>作品介绍：<a href='https://bgm.tv/subject/525256' target='_blank'>Bangumi</a>、<a href='https://vndb.org/v53637' target='_blank'>VNDB</a></p>"
+      }
+    },
+    {
       "id": "shirotsume_ex",
       "title": "白诘草话-番外篇- 津名川家的圣诞节",
       "subtitle": "白詰草話-番外編- 津名川さん家のクリスマス",
@@ -56,11 +69,12 @@
     },
     {
       "id": "miazora_fd",
+      "hidden": true,
       "title": "抬头看看吧，看那天上的繁星 FINE DAYS",
       "subtitle": "見上げてごらん、夜空の星を FINE DAYS",
       "list": [
         ["状态", "进行中"],
-        ["进度", "阳南线 7%"]
+        ["进度", "阳南线 10%"]
       ],
       "image": "yozora_fd.jpg",
       "detail": {
