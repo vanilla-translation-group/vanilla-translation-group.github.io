@@ -230,6 +230,11 @@ html[data-bs-theme="dark"] .see_detail_btn_content {
     text-decoration: none
 }
 
+.container img {
+    display: inline-block;
+    max-width: 100%;
+}
+
 `;
 
 const navbar_template = /* html */ `
@@ -560,7 +565,7 @@ function render_article_list(){
         const tagHtml = article.tags.map(tag => `<a href="javascript:void(0)">${tag}</a>`).join("、");
         document.getElementById("article_list").insertAdjacentHTML("beforeend", /* html */ `
             <br />
-        <li class="list-group-item" style="padding: 20px 30px${article.isTestArticle===true&&getUrlArgs()["test_mode"]==="true"?"":";display:none;"}">
+        <li class="list-group-item" style="padding: 20px 30px${article.isTestArticle!==true||getUrlArgs()["test_mode"]==="true"?"":";display:none;"}">
             <h2 style="margin-bottom:15px;"><a href="${article.filename.split(".")[1]==="md"?`article.html?id=${article.filename.split(".")[0]}`:"https://view.officeapps.live.com/op/view.aspx?src="+fileAbsoluteURL}" class="article_list_link">${article.title}</a></h2>
             <span style="color:grey"><i class="bi bi-clock"></i> ${article.date} <i class="bi bi-tags-fill" style="margin-left: 16px;"></i> ${tagHtml} <i class="bi bi-person-fill" style="margin-left: 16px;"></i> 发布者：${article.author}</span>
             
