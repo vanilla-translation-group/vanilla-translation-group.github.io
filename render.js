@@ -297,7 +297,7 @@ const navbar_template = /* html */ `
 `;
 
 const bottom_template = /* html */ `
-<div style="margin-top: 80px;"></div><hr /><p><i class="bi bi-github"></i> <a href="https://github.com/vanilla-translation-group" target="_blank">访问我们的 GitHub 页面</a></p>
+<div style="margin-top: 80px;"></div><hr /><p><i class="bi bi-github"></i> <a href="https://github.com/vanilla-translation-group" target="_blank">访问我们的 GitHub 页面</a>&emsp;<i class="bi bi-discord"></i> <a href="https://discord.gg/4SmmqJN4rb" target="_blank">加入我们的 Discord 群组</a></p>
 `;
 
 const sub_page_template = /* html */ `
