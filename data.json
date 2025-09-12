@@ -37,7 +37,7 @@
       ],
       "image": "aikagi_append.jpg",
       "detail": {
-        "html": "<p>我们已于 2025.9.11 完成了本作品的翻译工作！🎉🎉</p><p>作品介绍：<a href='https://bangumi.tv/subject/445721' target='_blank'>Bangumi</a></p><p>参与人员：</p><ul><li>scientificworld（翻译、程序、修图）</li><li>Misaka13514（校对）</li><li>杏乃夏未（H翻译）</li></ul>"
+        "html": "<p>我们已于 2025.9.11 完成了本作品的翻译工作！🎉🎉</p><p>作品介绍：<a href='https://bangumi.tv/subject/445721' target='_blank'>Bangumi</a></p><p>参与人员：</p><ul><li>scientificworld（翻译、程序、修图）</li><li>Misaka13514（校对）</li><li>杏乃夏未（H翻译）</li></ul><p><a type='button' class='btn btn-outline-danger' href='https://codeberg.org/vanilla-translation-group/aikagi_append_cn/releases/download/1.0/aikagi_append_cn_1.0.7z' target='_blank'><i class='bi bi-download'></i> 获取补丁</a> <a href='https://codeberg.org/vanilla-translation-group/aikagi_append_cn/' target='_blank' type='button' class='btn btn-outline-dark'><i class='bi bi-git'></i> Codeberg 页面</a></p>"
       }
     },
     {
@@ -64,7 +64,7 @@
       ],
       "image": "shirotsume_ex.jpg",
       "detail": {
-        "html": "<p>我们已于 2024.12.25 完成了本作品的翻译工作！🎉🎉</p><p>作品介绍：<a href='https://bangumi.tv/subject/512180' target='_blank'>Bangumi</a>、<a href='https://vndb.org/v11443' target='_blank'>VNDB</a></p><p>参与人员：</p><ul><li>scientificworld（翻译、程序）</li><li>Misaka13514（校对、测试）</li><li>Muji Togawa（润色、测试）</li></ul>"
+        "html": "<p>我们已于 2024.12.25 完成了本作品的翻译工作！🎉🎉</p><p>作品介绍：<a href='https://bangumi.tv/subject/512180' target='_blank'>Bangumi</a>、<a href='https://vndb.org/v11443' target='_blank'>VNDB</a></p><p>参与人员：</p><ul><li>scientificworld（翻译、程序）</li><li>Misaka13514（校对、测试）</li><li>Muji Togawa（润色、测试）</li></ul><p><a type='button' class='btn btn-outline-danger' href='https://github.com/vanilla-translation-group/shirotsume_extra_chs/releases/download/v1.0/sirotume_ex_chs.zip' target='_blank'><i class='bi bi-download'></i> 获取补丁</a> <a href='https://github.com/vanilla-translation-group/shirotsume_extra_chs/' target='_blank' type='button' class='btn btn-outline-dark'><i class='bi bi-github'></i> GitHub 页面</a></p>"
       }
     },
     {
