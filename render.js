@@ -363,6 +363,8 @@ const about_page_template = /* html */ `
         <li>natsumi / 杏乃夏未（H翻译）</li>
         <li>Lockinwize Lolite / 洛仙璃（翻译协力）</li>
         <li>Muji Togawa / 戸川夢児（润色）</li>
+        <li>Pkuism（程序、修图）</li>
+        <li>zzjzxq33</li>
     </ul>
     <div style="margin-top: 40px;"></div>
     <h2>各平台发布帐号</h2>
