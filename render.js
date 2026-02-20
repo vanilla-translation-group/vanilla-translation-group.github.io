@@ -355,23 +355,12 @@ const about_page_template = /* html */ `
         如果你看到这里还有点点兴趣的话<del>（应该不会有吧）</del>，可以在<a href="https://github.com/vanilla-translation-group/vanilla-translation-group.github.io/issues/new?assignees=&labels=&projects=&template=application_form.md&title=%E7%94%B3%E8%AF%B7%E8%A1%A8">这里</a>填写申请表加入我们，<del>一起愉快的摸鱼划水</del>。</p>
     </div>
     <div style="margin-top: 40px;"></div>
-    <h2>成员列表</h2>
-    <ul>
-        <li>Misaka13514 / 欠陥電気（翻译、特效字幕、测试）</li>
-        <li>baiyuanneko / 柏园猫（网页开发）</li>
-        <li>scientificworld（程序、翻译、修图）</li>
-        <li>natsumi / 杏乃夏未（H翻译）</li>
-        <li>Lockinwize Lolite / 洛仙璃（翻译协力）</li>
-        <li>Muji Togawa / 戸川夢児（润色）</li>
-        <li>Pkuism（程序、修图）</li>
-        <li>zzjzxq33</li>
-    </ul>
-    <div style="margin-top: 40px;"></div>
     <h2>各平台发布帐号</h2>
     <ul>
         <li><a href="https://mikanani.me/Home/PublishGroup/982" target="_blank">Mikan Project / 蜜柑计划</a></li>
         <li><a href="https://dmhy.org/topics/list/team_id/855" target="_blank">DMHY / 動漫花園</a></li>
         <li><a href="https://2dfan.com/lists/4679" target="_blank">2DFan</a></li>
+        <li><a href="https://bbs2.kdays.net/thread/201" target="_blank">KDays</a></li>
     </ul>
     ${bottom_template}
 </div>

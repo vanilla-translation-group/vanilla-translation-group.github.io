@@ -28,6 +28,31 @@
   ],
   "chs": [
     {
+      "id": "yukifuru",
+      "title": "雪降る夜に - after after holy night -",
+      "list": [
+        ["状态", "进行中"],
+        ["进度", "校对中"]
+      ],
+      "image": "yf.jpg",
+      "detail": {
+        "html": "<p>作品介绍：<a href='https://bangumi.tv/subject/536104' target='_blank'>Bangumi</a></p>"
+      }
+    },
+    {
+      "id": "hareuso",
+      "title": "后宫的谎言 -Original Harem Story-",
+      "subtitle": "ハレウソ -Original Harem Story-",
+      "list": [
+        ["状态", "进行中"],
+        ["进度", "校对中"]
+      ],
+      "image": "hareuso.jpg",
+      "detail": {
+        "html": "<p>我们正在进行本作品的校对工作，敬请期待！</p><p>作品介绍：<a href='https://bangumi.tv/subject/407669' target='_blank'>Bangumi</a>、<a href='https://vndb.org/v23024' target='_blank'>VNDB</a></p>"
+      }
+    },
+    {
       "id": "usoss",
       "title": "谎言系列人气投票纪念SS",
       "subtitle": "ウソシリーズ人気投票記念SS",
