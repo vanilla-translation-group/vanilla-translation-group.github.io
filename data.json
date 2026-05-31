@@ -115,7 +115,7 @@
       ],
       "image": "yozora_fd.jpg",
       "detail": {
-        "html": "<p>我们已经完成了阳南线的初步翻译工作，其余路线后续视情况也可能会进行翻译，敬请期待！</p><p>作品介绍：<a href='https://bangumi.tv/subject/167726' target='_blank'>Bangumi</a>、<a href='https://vndb.org/v18907' target='_blank'>VNDB</a></p>"
+        "html": "<p>我们已经完成了阳南线的初步翻译工作，其余路线后续视情况也可能会进行翻译，敬请期待！</p><p>作品介绍：<a href='https://bangumi.tv/subject/167726' target='_blank'>Bangumi</a>、<a href='https://vndb.org/v18907' target='_blank'>VNDB</a></p><p><a href='https://codeberg.org/vanilla-translation-group/yozorafd/' target='_blank' type='button' class='btn btn-outline-dark'><i class='bi bi-git'></i> Codeberg 页面</a></p>"
       }
     },
     {
