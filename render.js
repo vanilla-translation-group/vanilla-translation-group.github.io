@@ -359,7 +359,6 @@ const about_page_template = /* html */ `
     <ul>
         <li><a href="https://mikanani.me/Home/PublishGroup/982" target="_blank">Mikan Project / 蜜柑计划</a></li>
         <li><a href="https://dmhy.org/topics/list/team_id/855" target="_blank">DMHY / 動漫花園</a></li>
-        <li><a href="https://2dfan.com/lists/4679" target="_blank">2DFan</a></li>
         <li><a href="https://bbs2.kdays.net/thread/201" target="_blank">KDays</a></li>
     </ul>
     ${bottom_template}
